@@ -50,7 +50,7 @@ export const BottomBar: React.FC = () => {
   const navItems = getBottomNavItems();
 
   return (
-    <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200/90 shadow-lg safe-bottom">
+    <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#084A39] border-t border-[#06382b] shadow-2xl safe-bottom">
       <div className="flex items-center justify-around h-16 px-1">
         {navItems.map((item) => {
           const Icon = item.icon;
@@ -61,18 +61,18 @@ export const BottomBar: React.FC = () => {
               onClick={() => setActiveModule(item.id)}
               className={`flex flex-col items-center justify-center flex-1 py-1 px-1 transition-all duration-150 active:scale-95 ${
                 isActive
-                  ? 'text-rose-600 font-bold'
-                  : 'text-slate-500 hover:text-slate-800 font-medium'
+                  ? 'text-white font-bold'
+                  : 'text-emerald-200/80 hover:text-white font-medium'
               }`}
             >
               <div
-                className={`p-1 rounded-xl transition-all ${
-                  isActive ? 'bg-rose-50 text-rose-600 scale-110' : ''
+                className={`p-1.5 rounded-xl transition-all ${
+                  isActive ? 'bg-rose-600 text-white scale-110 shadow-sm shadow-emerald-950/40' : 'text-emerald-200'
                 }`}
               >
                 <Icon className="w-5 h-5" />
               </div>
-              <span className="text-[10px] tracking-tight mt-0.5 truncate max-w-[68px]">
+              <span className={`text-[10px] tracking-tight mt-0.5 truncate max-w-[68px] ${isActive ? 'text-white font-bold' : 'text-emerald-200/90'}`}>
                 {item.label}
               </span>
             </button>

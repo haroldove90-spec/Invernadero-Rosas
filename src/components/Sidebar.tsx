@@ -70,16 +70,16 @@ export const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggleCollapse })
 
   return (
     <aside
-      className={`hidden lg:flex flex-col bg-slate-900 text-slate-300 border-r border-slate-800 transition-all duration-300 z-30 shrink-0 ${
+      className={`hidden lg:flex flex-col bg-[#084A39] text-emerald-50 border-r border-[#06382b] transition-all duration-300 z-30 shrink-0 ${
         collapsed ? 'w-20' : 'w-64'
       }`}
     >
       {/* Top Sidebar identity */}
-      <div className="h-16 flex items-center justify-between px-4 border-b border-slate-800/80">
+      <div className="h-16 flex items-center justify-between px-4 border-b border-[#06382b]">
         {!collapsed && (
           <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span className="text-xs font-bold uppercase tracking-wider text-emerald-200">
               {activeRole === 'admin'
                 ? 'Panel Dueño'
                 : activeRole === 'production'
@@ -92,12 +92,12 @@ export const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggleCollapse })
         )}
         <button
           onClick={onToggleCollapse}
-          className={`p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition ${
+          className={`p-1.5 rounded-lg text-emerald-200 hover:text-white hover:bg-[#0c5c47] transition ${
             collapsed ? 'mx-auto' : ''
           }`}
           title={collapsed ? 'Expandir panel lateral' : 'Contraer panel'}
         >
-          {collapsed ? <ChevronRight className="w-5 h-5 text-rose-400" /> : <ChevronLeft className="w-5 h-5 text-slate-400" />}
+          {collapsed ? <ChevronRight className="w-5 h-5 text-rose-300" /> : <ChevronLeft className="w-5 h-5 text-emerald-200" />}
         </button>
       </div>
 
@@ -113,14 +113,14 @@ export const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggleCollapse })
               title={item.label}
               className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium text-xs sm:text-sm transition-all duration-200 text-left ${
                 isActive
-                  ? 'bg-rose-600 text-white shadow-md shadow-rose-900/40 font-semibold'
-                  : 'text-slate-400 hover:text-slate-100 hover:bg-slate-800/80'
+                  ? 'bg-rose-600 text-white shadow-md shadow-emerald-950/40 font-semibold'
+                  : 'text-emerald-100/90 hover:text-white hover:bg-[#0c5c47]'
               } ${collapsed ? 'justify-center px-2' : ''}`}
             >
-              <Icon className={`w-5 h-5 shrink-0 ${isActive ? 'text-white' : 'text-slate-400 group-hover:text-white'}`} />
+              <Icon className={`w-5 h-5 shrink-0 ${isActive ? 'text-white' : 'text-emerald-200 group-hover:text-white'}`} />
               {!collapsed && <span className="truncate">{item.label}</span>}
               {!collapsed && item.badge && (
-                <span className="ml-auto px-1.5 py-0.5 text-[10px] font-bold rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/40">
+                <span className="ml-auto px-1.5 py-0.5 text-[10px] font-bold rounded-full bg-rose-500/25 text-rose-200 border border-rose-400/40">
                   {item.badge}
                 </span>
               )}
@@ -131,22 +131,22 @@ export const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggleCollapse })
 
       {/* Alerts notification if present */}
       {!collapsed && totalAlerts > 0 && (
-        <div className="mx-3 mb-3 p-3 rounded-xl bg-amber-500/10 border border-amber-500/20">
-          <div className="flex items-center gap-2 text-xs font-semibold text-amber-400">
+        <div className="mx-3 mb-3 p-3 rounded-xl bg-emerald-950/50 border border-emerald-700/50">
+          <div className="flex items-center gap-2 text-xs font-semibold text-amber-300">
             <AlertTriangle className="w-4 h-4 shrink-0" />
             <span>{totalAlerts} Alertas de Stock/Campo</span>
           </div>
-          <p className="mt-1 text-[11px] text-amber-300/80">
+          <p className="mt-1 text-[11px] text-emerald-200/90">
             {lowStockRoses} rosas y {lowStockSupplies} insumos bajo el mínimo.
           </p>
         </div>
       )}
 
       {/* Bottom session trigger in sidebar */}
-      <div className="p-3 border-t border-slate-800">
+      <div className="p-3 border-t border-[#06382b]">
         <button
           onClick={() => setActiveRole(null)}
-          className={`w-full flex items-center gap-3 px-3 py-2 text-xs font-medium text-slate-400 hover:text-rose-400 hover:bg-slate-800 rounded-xl transition ${
+          className={`w-full flex items-center gap-3 px-3 py-2 text-xs font-medium text-emerald-200 hover:text-rose-300 hover:bg-[#0c5c47] rounded-xl transition ${
             collapsed ? 'justify-center px-2' : ''
           }`}
           title="Cambiar de Rol / Cerrar Sesión"
