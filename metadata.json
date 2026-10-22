@@ -1,0 +1,6 @@
+{
+  "name": "Invernadero Rosas",
+  "description": "Sistema integral de gestión de producción, inventario de rosas e insumos, cosechas, punto de venta y supervisión para invernadero.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

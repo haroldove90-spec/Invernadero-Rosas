@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="roseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f43f5e" />
+      <stop offset="50%" stop-color="#e11d48" />
+      <stop offset="100%" stop-color="#9f1239" />
+    </linearGradient>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b" />
+      <stop offset="100%" stop-color="#022c22" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background rounded squircle with greenhouse frame aesthetic -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)" />
+  
+  <!-- Greenhouse arch subtle outline -->
+  <path d="M96 416 V220 C96 140 170 80 256 80 C342 80 416 140 416 220 V416 Z" fill="none" stroke="#10b981" stroke-width="12" stroke-opacity="0.3" />
+  <path d="M256 80 V416" stroke="#10b981" stroke-width="8" stroke-opacity="0.2" />
+  <path d="M120 220 H392" stroke="#10b981" stroke-width="8" stroke-opacity="0.2" />
+  <path d="M140 310 H372" stroke="#10b981" stroke-width="8" stroke-opacity="0.2" />
+
+  <!-- Leaves -->
+  <path d="M256 370 C210 370 170 330 180 280 C210 285 240 320 256 370 Z" fill="url(#leafGrad)" />
+  <path d="M256 370 C302 370 342 330 332 280 C302 285 272 320 256 370 Z" fill="url(#leafGrad)" />
+  <!-- Stem -->
+  <path d="M256 240 Q254 330 256 420" fill="none" stroke="#059669" stroke-width="14" stroke-linecap="round" />
+
+  <!-- Rose Blossom -->
+  <g transform="translate(0, -10)">
+    <!-- Outer Petals -->
+    <path d="M256 140 C200 140 160 180 160 225 C160 270 200 305 256 305 C312 305 352 270 352 225 C352 180 312 140 256 140 Z" fill="url(#roseGrad)" />
+    <!-- Layer 2 Petals -->
+    <path d="M210 180 C190 215 200 260 240 275 C215 250 215 210 230 190 Z" fill="#fda4af" opacity="0.85" />
+    <path d="M302 180 C322 215 312 260 272 275 C297 250 297 210 282 190 Z" fill="#f43f5e" />
+    <path d="M220 230 C240 265 272 265 292 230 C270 245 242 245 220 230 Z" fill="#be123c" />
+    <!-- Inner spiral -->
+    <circle cx="256" cy="205" r="32" fill="#881337" />
+    <path d="M245 195 Q256 185 267 195 Q273 205 265 215 Q256 220 247 212" fill="none" stroke="#fda4af" stroke-width="6" stroke-linecap="round" />
+  </g>
+</svg>
